@@ -79,7 +79,7 @@
 </nav>
 <main>
 
-    <section class="category">
+    <section class="category" id="blackboard-murals">
       <div class="cat-header">
         <h2>Blackboard Murals</h2>
         <p class="cat-desc">Large-scale chalk and paint works created for school classrooms — composing and communicating for a shared public audience.</p>
@@ -99,7 +99,7 @@
         </div>
       </div>
     </section>
-    <section class="category">
+    <section class="category" id="paintings">
       <div class="cat-header">
         <h2>Paintings</h2>
         <p class="cat-desc">Oil and acrylic paintings exploring color, light, and atmosphere across landscapes and scenes.</p>
@@ -127,7 +127,7 @@
         </div>
       </div>
     </section>
-    <section class="category">
+    <section class="category" id="anime-fan-art">
       <div class="cat-header">
         <h2>Anime Fan Art</h2>
         <p class="cat-desc">Fan art and imitation studies — learning line quality, expression, and visual style through the work of other artists.</p>
@@ -147,7 +147,7 @@
         </div>
       </div>
     </section>
-    <section class="category">
+    <section class="category" id="digital-plein-air">
       <div class="cat-header">
         <h2>Digital Plein Air</h2>
         <p class="cat-desc">Digital paintings made from direct observation — capturing light, season, and place through flat color and shape.</p>
@@ -175,7 +175,7 @@
         </div>
       </div>
     </section>
-    <section class="category">
+    <section class="category" id="classical-studies">
       <div class="cat-header">
         <h2>Classical Studies</h2>
         <p class="cat-desc">Traditional pencil still life — foundational training in form, shadow, and observational drawing.</p>
@@ -191,7 +191,7 @@
         </div>
       </div>
     </section>
-    <section class="category">
+    <section class="category" id="formal-certifications">
       <div class="cat-header">
         <h2>Formal Certifications</h2>
         <p class="cat-desc">Grade 6 in Pencil Sketch and Grade 7 in Gouache, issued by the Fine Arts Grade Examination Center of China Art Communication Research Institute.</p>
@@ -218,7 +218,7 @@
 </main>
 <footer>
   <span>Lina Luo</span>
-  <span>qluo1@seas.upenn.edu</span>
+  <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="47362b322876073422263469323722292969222332">[email&#160;protected]</a></span>
   <span>Computer Graphics &amp; Game Technology, Penn</span>
 </footer>
 <div id="lightbox">
@@ -226,7 +226,7 @@
   <img id="lb-img" src="" alt=""/>
   <span id="lb-caption"></span>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lb-img"),lbCap=document.getElementById("lb-caption");
   document.querySelectorAll(".card,.mural-item").forEach(c=>{
     c.addEventListener("click",()=>{lbImg.src=c.querySelector("img").src;lbCap.textContent=c.querySelector(".card-title").textContent;lb.classList.add("active")});
@@ -235,10 +235,7 @@
   lb.addEventListener("click",()=>lb.classList.remove("active"));
   document.getElementById("lb-close").addEventListener("click",e=>{e.stopPropagation();lb.classList.remove("active")});
   document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("active")});
-  document.querySelectorAll(".category h2").forEach(h=>{h.closest(".category").id=h.textContent.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/-$/,"")});
+  
   const sections=document.querySelectorAll(".category"),navLinks=document.querySelectorAll("nav a");
   new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>{const active=a.getAttribute("href")==="#"+id;a.style.color=active?"var(--ink)":"";a.style.borderBottomColor=active?"var(--accent)":"transparent"})}})},{threshold:.3}).observe;
-  sections.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>{const active=a.getAttribute("href")==="#"+id;a.style.color=active?"var(--ink)":"";a.style.borderBottomColor=active?"var(--accent)":"transparent"})}})},{threshold:.3}).observe(s));
-</script>
-</body>
-</html>
+  sections.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.targe
